@@ -17,3 +17,22 @@ dist/
 .DS_Store
 *.log
 .env*
+
+backend/.venv/
+
+
+
+
+curl -v https://api.deepseek.com/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer sk-a3d255b5d4a541eab6251a7f02f07f69" \
+  -d '{
+        "model": "deepseek-flash",
+        "messages": [
+          {"role": "system", "content": "You are a helpful assistant."},
+          {"role": "user", "content": "Hello!"}
+        ],
+        "thinking": {"type": "enabled"},
+        "reasoning_effort": "high",
+        "stream": false
+      }'
